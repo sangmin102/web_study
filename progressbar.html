@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 진행 상태 및 로그 목록</title>
+    <style>
+        /* Reset CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .table-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table thead th {
+            border-top: 2px solid #333;
+            border-bottom: 2px solid #333;
+            padding: 10px;
+            background-color: #f8f8f8;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .table th, .table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* 개선된 프로그래스 바 스타일 */
+        .progress-container {
+            width: 100%;
+            background: #e0e0e0;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            height: 25px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #2196f3, #64b5f6); /* 푸른색으로 변경 */
+            text-align: center;
+            color: white;
+            font-size: 0.85rem;
+            line-height: 25px;
+            position: relative;
+            transition: width 1s ease-in-out; /* width에 변화를 주는 애니메이션 */
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            animation: shineSmooth 2s ease-in-out infinite; /* 부드러운 애니메이션 */
+        }
+
+        @keyframes shineSmooth {
+            0% {
+                left: -100%;
+                opacity: 0.3;
+            }
+            50% {
+                left: 50%;
+                opacity: 1;
+            }
+            100% {
+                left: 100%;
+                opacity: 0.3;
+            }
+        }
+
+        .btn {
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* 로그 테이블 스타일 */
+        .log-container {
+            margin-top: 30px;
+        }
+
+        .log-table tbody tr:nth-child(odd) {
+            background-color: #f8f8f8;
+        }
+
+        .log-table tbody tr:hover {
+            background-color: #e8e8e8;
+        }
+
+        .log-table th, .log-table td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>상품 진행 상태</h1>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>상품 번호</th>
+                    <th>상품명</th>
+                    <th>진행률</th>
+                    <th>작업</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>스마트폰</td>
+                    <td>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress1">0%</div>
+                        </div>
+                    </td>
+                    <td><button class="btn">상세보기</button></td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>노트북</td>
+                    <td>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress2">0%</div>
+                        </div>
+                    </td>
+                    <td><button class="btn">상세보기</button></td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>헤드폰</td>
+                    <td>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress3">0%</div>
+                        </div>
+                    </td>
+                    <td><button class="btn">상세보기</button></td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>태블릿</td>
+                    <td>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress4">0%</div>
+                        </div>
+                    </td>
+                    <td><button class="btn">상세보기</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>로그 목록</h2>
+    <div class="table-container log-container">
+        <table class="table log-table">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>로그 메시지</th>
+                    <th>날짜</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>시스템 초기화 완료</td>
+                    <td>2024-12-01</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>사용자 로그인 성공</td>
+                    <td>2024-12-02</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>데이터 동기화 완료</td>
+                    <td>2024-12-03</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>상품 데이터 업데이트</td>
+                    <td>2024-12-03</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        window.onload = function() {
+            // 각 프로그레스 바의 진행률을 동적으로 설정
+            setProgressBar('progress1', 70);
+            setProgressBar('progress2', 45);
+            setProgressBar('progress3', 90);
+            setProgressBar('progress4', 60);
+        };
+
+        // 진행률을 설정하는 함수
+        function setProgressBar(id, percentage) {
+            const progressBar = document.getElementById(id);
+            
+            // 처음에는 width를 0%로 설정하고 애니메이션 시작
+            progressBar.style.width = '0%';
+            progressBar.innerHTML = '0%';
+            
+            // 100ms 후에 실제 진행률로 변경 (애니메이션 효과가 적용되도록)
+            setTimeout(function() {
+                progressBar.style.transition = 'width 1s ease-in-out'; // 애니메이션 설정
+                progressBar.style.width = percentage + '%';
+                progressBar.innerHTML = percentage + '%';
+            }, 100); // 100ms 뒤에 진행률 변경
+        }
+    </script>
+</body>
+</html>
