@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*초기설정*/
+        * { padding: 0; margin: 0;} /*여백 초기화*/
+        a { text-decoration: none;} /*링크 밑줄 제거*/
+
+        #top { width: 600px; height: 630px; background: yellow; margin: 0 auto;}
+
+        #menu { width: 600px; height: 70px; background: #000; margin: 0 auto; text-align: center;}
+
+        #menu p {
+            display: inline-block; /*한줄로 배치*/
+            width: 160px; height: 40px; line-height: 40px;
+            border: 1px solid #fff;
+            margin: 15px 10px; /*상하 좌우 여백*/
+            border-radius: 10px; /*모서리를 둥글게*/
+        }
+        #menu p a {
+            color:#fff;
+        }
+        #menu p:hover a {
+            color:yellow;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div id="top"><img src="images/kakao_img.gif" usemap="#kakao_img"></div>
+
+    <map name="kakao_img">
+        <area shape="rect" coords="110,290,345,320" href="#a">
+    </map>
+
+    <div id="menu">
+       <p><a href="#a">공지사항 바로가기</a></p>
+       <p><a href="#a">당첨자 발표</a></p>
+       <p><a href="#a">이메일 문의</a></p>
+    </div>
+
+</body>
+</html>

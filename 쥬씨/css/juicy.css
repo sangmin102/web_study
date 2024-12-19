@@ -1,0 +1,78 @@
+/*초기설정*/
+* {padding: 0; margin: 0;} /*여백초기화*/
+a {text-decoration: none;} /*밑줄제거*/
+img {vertical-align: middle;} /*그림 옆에 요소들 수직정렬 가운데*/
+
+
+#wrap {width: 700px; margin: 0 auto;} /*가운데 정렬*/
+
+/* 상단로고&메뉴 */
+#header {width: 700px; height: 100px;  }
+
+#header p { display: inline-block;} /*한줄로배치*/
+#header p a { 
+    padding-right: 20px; 
+    color:#333; font-size: 18px; font-weight: bold; 
+    letter-spacing: -1px; /*자간*/
+}
+#header p:hover a {
+    color:#e72317;
+}
+
+/* 메인이미지 */
+#mainimg {width: 700px; height: 707px; background: pink;}
+
+/* 기간&버튼 */
+#main_down {width: 700px; height: 193px; background: yellow;}
+
+#main_down p { float: left;} 
+
+#main_down p.box1 {width: 513px; height: 193px; background: cyan;}
+#main_down p.box2 {width: 187px; height: 193px; background: red;}
+
+
+/* 영양성분및 칼로리정보 제목 */
+#info_title {width: 700px; height: 100px; background: pink;}
+
+/* 영양성분및 칼로리정보 */
+#info {width: 700px; height: 377px; background: yellow;}
+
+/* 무비플레이 */
+#movie {width: 700px; height: 325px; background: pink;}
+
+#movie p { width: 350px; height: 325px; background: gray; float: left;}
+
+/* 애니메이션배너 */
+#ani {width: 700px; height: 163px; background: yellow;}
+
+/* 4종 버튼 */
+#btn {width: 700px; height: 266px; background: pink;}
+
+#btn p { float: left;}
+#btn p.box1 {width: 178px; height: 266px; background: chartreuse;}
+#btn p.box2 {width: 172px; height: 266px; background: chocolate;}
+#btn p.box3 {width: 163px; height: 266px; background: darkgoldenrod;}
+#btn p.box4 {width: 187px; height: 266px; background: darkorchid;}
+
+
+/* 계절 배너 */
+#banner {width: 700px; height: 212px; background: yellow;}
+
+/* 뉴스&기사 */
+#news {width: 700px; height: 416px; background: pink;}
+
+#news p {width: 350px; height: 416px;
+         background: cyan; float: left;}
+
+
+/* 하단메뉴 */
+#footer_menu {width: 700px; height: 40px; background: #404145;
+              text-align: right; border-bottom: 1px solid red;
+    }
+
+#footer_menu p {display: inline-block; padding-right: 20px;}
+#footer_menu p a {color:#a8a8a8; font-size: 14px; font-weight: bold;}
+#footer_menu p:hover a { color:#fff;}
+
+/* 카피라이트영역 */
+#footer {width: 700px; height: 225px; background: pink;}

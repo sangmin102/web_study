@@ -1,0 +1,60 @@
+/*초기설정*/
+* {padding: 0; margin: 0;} /*여백초기화*/
+a {text-decoration: none;} /*밑줄제거*/
+img {vertical-align: middle;} /*그림 옆에 요소들 수직정렬 가운데*/
+
+
+#wrap {width: 700px; margin: 0 auto;} /*가운데 정렬*/
+
+/* 상단로고&메뉴 */
+#header {width: 700px; height: 100px;  }
+
+#header p { display: inline-block;} /*한줄로배치*/
+#header p a { 
+    padding-right: 20px; 
+    color:#333; font-size: 18px; font-weight: bold; 
+    letter-spacing: -1px; /*자간*/
+}
+#header p:hover a {
+    color:#e72317;
+}
+
+
+/*오시는길 영역*/
+#map { width: 700px; height: 640px; background: yellow;}
+
+#up { width: 530px; height: 150px; 
+    background: cyan; margin: 30px auto; text-align: center;
+}
+#up p {display: inline-block;}
+
+#up p.left {width: 130px; height: 150px; background: pink;}
+
+#up p.right {width: 350px; height: 150px; background: orange;}
+
+p.line { width: 620px; height: 2px; background: red; margin: 30px auto;}
+
+
+#down { width: 530px; height: 150px; 
+    background: cyan; margin: 30px auto; text-align: center;
+}
+#down p {display: inline-block;}
+
+#down p.left {width: 130px; height: 150px; background: pink;}
+
+#down p.right {width: 350px; height: 150px; background: orange;}
+
+
+
+
+/* 하단메뉴 */
+#footer_menu {width: 700px; height: 40px; background: #404145;
+              text-align: right; border-bottom: 1px solid red;
+    }
+
+#footer_menu p {display: inline-block; padding-right: 20px;}
+#footer_menu p a {color:#a8a8a8; font-size: 14px; font-weight: bold;}
+#footer_menu p:hover a { color:#fff;}
+
+/* 카피라이트영역 */
+#footer {width: 700px; height: 225px; background: pink;}

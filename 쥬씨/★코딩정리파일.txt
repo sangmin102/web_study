@@ -1,0 +1,15 @@
+★롤오버기능 사용법
+this.src='이곳에 파일 경로 붙여넣기' 
+
+<img src="" onmouseover="this.src=''" onmouseout="">
+
+예>
+onmouseover="this.src='images/juicy_banner_btn1_r.jpg'" onmouseout="this.src='images/juicy_banner_btn1.jpg'"
+
+------------------------------------------
+★이미지맵 사용법
+<img src="" usemap="#이름">
+
+<map name="이름"> 
+<area shape="rect" coords="" href="#a">
+</map>
